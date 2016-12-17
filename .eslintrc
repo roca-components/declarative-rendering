@@ -1,0 +1,14 @@
+extends:
+- fnd
+- plugin:react/recommended
+plugins:
+- react
+settings:
+    react:
+        pragma: createDOMNode
+rules:
+    jsx-quotes:
+    - error
+    - prefer-double
+    react/display-name: off
+    react/no-unknown-property: off
