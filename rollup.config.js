@@ -9,6 +9,7 @@ let nodeResolve = require("rollup-plugin-node-resolve");
 let PKG = "node_modules/**";
 
 module.exports = generateConfig("./src/index.js", "./dist/bundle.js", {
+	moduleName: "MyComponent",
 	extensions: [".jsx"]
 });
 
