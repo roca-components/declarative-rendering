@@ -20,13 +20,10 @@ export function createElement(tag, params, ...children) {
 	children.forEach(child => {
 		if(!child) {
 			return;
+		} else if(child.substr) {
+			child = document.createTextNode(child);
 		}
-
-		if(child.substr) {
-			node.textContent = child; // FIXME: clobbers prior siblings
-		} else {
-			node.appendChild(child);
-		}
+		node.appendChild(child);
 	});
 
 	return node;
