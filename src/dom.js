@@ -1,10 +1,13 @@
 export function createElement(tag, params, ...children) {
 	let node = document.createElement(tag);
 
-	Object.keys(params || {}).map(param => {
+	Object.keys(params || {}).forEach(param => {
 		let value = params[param];
-		if(value === true) { // assume boolean attribute (e.g. `<input … autofocus>`)
+		// special-casing for boolean attributes (e.g. `<input … autofocus>`)
+		if(value === true) {
 			value = "";
+		} else if(value === false) {
+			return;
 		}
 
 		if(value.substr) { // attribute
