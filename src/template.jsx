@@ -1,4 +1,4 @@
-import { createElement as createDOMNode } from "./dom";
+import { createElement as createDOMNode } from "uitil/dom/create";
 
 export default (title, desc) => <div>
 	<h3>{title}</h3>
